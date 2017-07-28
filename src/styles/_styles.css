@@ -1,0 +1,64 @@
+/*
+
+  STYLES
+
+  Add custom styles here.
+
+*/
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fb-blue {
+  color: #3b5998;
+}
+
+.fb-icon {
+  width: 24px;
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+}
+
+.share-btn {
+  padding-left: 40px;
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+  .header-title,
+  .footer-title {
+    font-size: 3rem;
+  }
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "rn-house-sans-regular";
+  src: url("/fonts/RNHouseSansW01Regular.eot?#iefix");
+  src: url("/fonts/RNHouseSansW01Regular.eot?#iefix") format("eot"),
+    url("/fonts/RNHouseSansW01Regular.woff2") format("woff2"),
+    url("/fonts/RNHouseSansW01Regular.woff") format("woff"),
+    url("/fonts/RNHouseSansW01Regular.ttf") format("truetype"),
+    url("/fonts/RNHouseSansW01Regular.svg#RNHouseSansW01Regular") format("svg");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "rn-house-sans-bold";
+  src: url("/fonts/RNHouseSansW01Bold.eot?#iefix");
+  src: url("/fonts/RNHouseSansW01Bold.eot?#iefix") format("eot"),
+    url("/fonts/RNHouseSansW01Bold.woff2") format("woff2"),
+    url("/fonts/RNHouseSansW01Bold.woff") format("woff"),
+    url("/fonts/RNHouseSansW01Bold.ttf") format("truetype"),
+    url("/fonts/RNHouseSansW01Bold.svg#RNHouseSansW01Bold") format("svg");
+}
+
+.rn {
+  font-family: "rn-house-sans-regular", sans-serif;
+}
+
+.rn-b {
+  font-family: "rn-house-sans-bold", sans-serif;
+}
