@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const ssr = require('./src/ssr').default;
 
@@ -33,21 +34,42 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: postCssConfig
-            }
-          }
-        ]
       }
-    ]
+    ].concat(
+      ENV === 'production'
+        ? [
+            {
+              test: /\.css$/,
+              use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [
+                  'css-loader',
+                  {
+                    loader: 'postcss-loader',
+                    options: {
+                      plugins: postCssConfig
+                    }
+                  }
+                ]
+              })
+            }
+          ]
+        : [
+            {
+              test: /\.css$/,
+              use: [
+                'style-loader',
+                'css-loader',
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                    plugins: postCssConfig
+                  }
+                }
+              ]
+            }
+          ]
+    )
   },
   plugins: [
     new ProgressBarPlugin(),
@@ -84,7 +106,8 @@ module.exports = {
               ]
             },
             output: { comments: false }
-          })
+          }),
+          new ExtractTextPlugin('tachyons.css')
         ]
       : []
   ),
