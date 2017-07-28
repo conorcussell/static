@@ -10,7 +10,15 @@ const ssr = require('./src/ssr').default;
 
 const ENV = process.env.NODE_ENV || 'development';
 
-const cssConfig = [];
+const postCssConfig = loader => [
+  require('postcss-import')({ root: loader.resourcePath }),
+  require('postcss-css-variables')(),
+  require('postcss-conditionals')(),
+  require('postcss-custom-media')(),
+  require('css-mqpacker')(),
+  require('autoprefixer')(),
+  require('cssnano')()
+];
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -34,15 +42,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: loader => [
-                require('postcss-import')({ root: loader.resourcePath }),
-                require('postcss-css-variables')(),
-                require('postcss-conditionals')(),
-                require('postcss-custom-media')(),
-                require('css-mqpacker')(),
-                require('autoprefixer')(),
-                require('cssnano')()
-              ]
+              plugins: postCssConfig
             }
           }
         ]
