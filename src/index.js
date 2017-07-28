@@ -1,5 +1,7 @@
 import { h, render } from 'preact';
 
+require('./styles/main.css');
+
 let root = document.getElementById('app');
 function init() {
   let App = require('./components/app').default;
