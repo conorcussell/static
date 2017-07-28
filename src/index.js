@@ -1,6 +1,6 @@
 import { h, render } from 'preact';
 
-require('./styles/main.css');
+require('./styles/tachyons.css');
 
 let root = document.getElementById('app');
 function init() {

@@ -1,3 +1,6 @@
 import { h } from 'preact';
 
-export default props => <div id="app">App</div>;
+export default props =>
+  <div className="sans-serif pa2" id="app">
+    App
+  </div>;
