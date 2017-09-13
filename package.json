@@ -33,6 +33,7 @@
     "postcss-css-variables": "^0.7.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
     "preact-render-spy": "^1.0.0-rc.8",
     "preact-render-to-string": "^3.6.3",
     "progress-bar-webpack-plugin": "^1.10.0",
