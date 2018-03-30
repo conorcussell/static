@@ -86,6 +86,7 @@ module.exports = {
         removeComments: true
       },
       title: 'App Title',
+      ENV,
       render: () => ssr()
     })
   ].concat(
@@ -107,7 +108,7 @@ module.exports = {
             },
             output: { comments: false }
           }),
-          new ExtractTextPlugin('tachyons.css')
+          new ExtractTextPlugin('style.css')
         ]
       : []
   ),

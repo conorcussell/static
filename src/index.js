@@ -10,6 +10,7 @@ function init() {
 
 if (process.env.NODE_ENV === 'development' && module.hot) {
   require('preact/devtools');
+  require('a11y.css/css/a11y-en.css');
   module.hot.accept('./components/app', () => requestAnimationFrame(init));
 }
 

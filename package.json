@@ -1,11 +1,12 @@
 {
-  "name": "hub",
+  "name": "static",
   "version": "0.1.0",
   "description": "simple static preact starter",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
+    "start":
+      "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
     "build": "cross-env NODE_ENV=production webpack",
     "deploy": "surge build"
   },
